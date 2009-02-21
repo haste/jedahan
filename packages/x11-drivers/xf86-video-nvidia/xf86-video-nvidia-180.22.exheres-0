@@ -1,0 +1,16 @@
+# Copyright (c) 2009 Jonathan Dehan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require xorg
+
+SUMMARY="Nvidia's binary video driver for xorg"
+
+LICENCES="as-is"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    build:
+    build+run:
+        >=x11-server/xorg-server-1.2"
+
