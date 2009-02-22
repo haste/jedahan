@@ -1,0 +1,19 @@
+# Copyright 2009 Jonathan Dehan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="Hierarchical notebook helps structure many kinds of data in one place"
+HOMEPAGE="http://${PN}.sourceforge.org/"
+DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.gz"
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS=""
+
+DEPENDENCIES=""
+
+src_install(){
+    dodoc README doc/hnbrc
+    doman doc/hnb.1
+    dobin src/hnb
+}
