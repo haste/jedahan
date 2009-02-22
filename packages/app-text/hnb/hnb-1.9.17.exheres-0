@@ -8,9 +8,6 @@ DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.gz"
 LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64 ~x86"
-MYOPTIONS=""
-
-DEPENDENCIES=""
 
 src_install(){
     dodoc README doc/hnbrc
