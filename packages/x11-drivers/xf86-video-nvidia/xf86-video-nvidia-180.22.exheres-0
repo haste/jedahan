@@ -10,7 +10,5 @@ SLOT="0"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
-    build:
-    build+run:
-        >=x11-server/xorg-server-1.2"
-
+    >=x11-server/xorg-server-1.2
+"
