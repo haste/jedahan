@@ -1,0 +1,32 @@
+# Copyright 2009 Jonathan Dehan <jedahan@gmail.com>
+# Distributed under the termsof the GNU General Public License v2
+
+require cmake
+
+SUMMARY="cross-platform multimedia library"
+DESCRIPTION="Allegro is really good for making games woo!"
+
+HOMEPAGE="http://alleg.sourceforge.net/"
+DOWNLOADS="mirror://sourceforge/alleg/${PNV}.tar.gz"
+
+LICENCES="as-is"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS="X alsa arts esd "
+
+DEPENDENCIES="
+    build:
+        >=sys-devel/cmake-2.6
+"
+
+#src_compile() {
+#    mkdir Build
+#    cd Build
+#    CMAKE_INSTALL_PREFIX="/usr" cmake ..
+#    emake
+#}
+
+#src_install() {
+#    emake install
+#    dosym liballeg-${PV}.so /usr/$(get_libdir)/liballeg.so
+#}
