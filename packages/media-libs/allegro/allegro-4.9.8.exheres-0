@@ -12,21 +12,9 @@ DOWNLOADS="mirror://sourceforge/alleg/${PNV}.tar.gz"
 LICENCES="as-is"
 SLOT="0"
 PLATFORMS="~amd64 ~x86"
-MYOPTIONS="X alsa arts esd "
+MYOPTIONS="X alsa arts esd"
 
 DEPENDENCIES="
     build:
         >=sys-devel/cmake-2.6
 "
-
-#src_compile() {
-#    mkdir Build
-#    cd Build
-#    CMAKE_INSTALL_PREFIX="/usr" cmake ..
-#    emake
-#}
-
-#src_install() {
-#    emake install
-#    dosym liballeg-${PV}.so /usr/$(get_libdir)/liballeg.so
-#}
