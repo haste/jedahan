@@ -1,4 +1,4 @@
 TODO:
   x11-drivers/nvidia: this is gonna be ugly
-  dev-cpp/codeblocks: wxgtk toolkit looks fun too
+  app-edit/gedit
   media-libs/allegro: how2symlink $PNV to $PN in libs?

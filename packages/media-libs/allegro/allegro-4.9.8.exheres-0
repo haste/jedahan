@@ -12,9 +12,23 @@ DOWNLOADS="mirror://sourceforge/alleg/${PNV}.tar.gz"
 LICENCES="as-is"
 SLOT="0"
 PLATFORMS="~amd64 ~x86"
-MYOPTIONS="X alsa arts esd"
-
+MYOPTIONS="
+    alsa
+    d3d [[ description = [ Adds Direct3d support (for windows development) ] ]]
+    doc [[ description = [ Adds html and info documentation ] ]]
+    flac
+    jpeg
+    openal 
+    opengl
+    oss 
+    png 
+    sndfile [[ description = [ Adds WAV/AIFF/FLAC audio codec support ] ]]
+    ttf 
+    vorbis
+    x11
+    "
 DEPENDENCIES="
-    build:
-        >=sys-devel/cmake-2.6
+    flac? ( media-libs/flac )
 "
+
+CMAKE_SRC_CONFIGURE_OPTION_WANTS=( 'd3d D3D', 'doc DOCS_INFO', 'doc DOCS_HTML', 'flac FLAC', 'jpeg JPEG', 'openal OPENAL', 'opengl OPENGL', 'oss OSS', 'png PNG', 'sndfile SNDFILE', 'ttf TTF', 'vorbis VORBIS', 'x11 X11' )
