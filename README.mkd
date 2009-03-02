@@ -1,10 +1,6 @@
 Welcome
 =======
-
-This is jedahan's supplemental repository for exherbo.
-Send bugs / comments to jedahan at gmail.
-All code is GPL-2 licensed unless otherwise explicitly noted.
-
+Jonathan Dehan's <jedahan/gmail> supplemental exherbo repository.
 
 Todo
 ----
