@@ -1,8 +1,8 @@
-# Copyright 2009 Saleem Abdulrasool <jedahan@gmail.com>
+# Copyright 2009 Jonathan Dehan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Purpose License v2
 
 SUMMARY="An advanced IRC Bouncer"
-DESCRIPTION="
+DESCRIPTION="ZNC is an IRC bounce/proxy with many advanced features like detaching, multiple users, multiple clients per user, channel/query playback buffers, SSL, IPv6, transparent DCC bouncing, C++/Perl module support, party line, and Web administration. 
 "
 HOMEPAGE="http://${PN}.sf.net"
 DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.gz"
