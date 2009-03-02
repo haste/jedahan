@@ -1,6 +1,6 @@
 Welcome
 =======
-Jonathan Dehan's <jedahan/gmail> supplemental exherbo repository.
+Jonathan Dehan's <jedahan@gmail.com> supplemental exherbo repository.
 
 Todo
 ----
