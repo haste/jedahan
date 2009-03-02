@@ -1,4 +1,2 @@
 TODO:
-  x11-drivers/nvidia: this is gonna be ugly
-  app-edit/gedit
-  media-libs/allegro: how2symlink $PNV to $PN in libs?
+  media-libs/allegro: how2symlink $PNV to $PN for libraries?
