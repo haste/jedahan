@@ -1,2 +1,11 @@
-TODO:
-  media-libs/allegro: how2symlink $PNV to $PN for libraries?
+Welcome
+=======
+
+This is jedahan's supplemental repository for exherbo.
+Send bugs / comments to jedahan at gmail.
+All code is GPL-2 licensed unless otherwise explicitly noted.
+
+
+Todo
+----
+    media-libs/allegro: how2symlink $PNV to $PN for libraries?
