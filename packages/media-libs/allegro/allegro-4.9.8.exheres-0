@@ -8,6 +8,7 @@ DESCRIPTION="Allegro is a game programming library for C/C++ developers distribu
 
 HOMEPAGE="http://alleg.sourceforge.net/"
 DOWNLOADS="mirror://sourceforge/alleg/${PNV}.tar.gz"
+REMOTE_IDS="freshmeat: alleg"
 
 LICENCES="as-is"
 SLOT="0"
@@ -32,3 +33,11 @@ DEPENDENCIES="
 "
 
 CMAKE_SRC_CONFIGURE_OPTION_WANTS=( 'd3d D3D', 'doc DOCS_INFO', 'doc DOCS_HTML', 'flac FLAC', 'jpeg JPEG', 'openal OPENAL', 'opengl OPENGL', 'oss OSS', 'png PNG', 'sndfile SNDFILE', 'ttf TTF', 'vorbis VORBIS', 'x11 X11' )
+
+# NOTE: This is wrong, don't do this
+cmake_src_install() {
+     # We run default_src_install from ${ECMAKE_BUILD_DIR}, so it doesn't look for docs in ${WORK}.
+    [[ -d ${ECMAKE_BUILD_DIR} ]] && DEFAULT_SRC_INSTALL_EXTRA_PREFIXES+=( "${WORK}/" )
+    _cmake_run default_src_install
+    dosym lib${PNV}.so /usr/$(get_libdir)/lib${PN}.so
+}
