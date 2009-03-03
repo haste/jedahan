@@ -1,5 +1,5 @@
 # Copyright 2009 Jonathan Dehan <jedahan@gmail.com>
-# Distributed under the termsof the GNU General Public License v2
+# Distributed under the terms of the GNU General Public License v2
 
 require cmake
 
