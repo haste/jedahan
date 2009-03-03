@@ -1,0 +1,20 @@
+# Copyright 2009 Jonathan Dehan <jedahan@gmail.com>
+# Distributed under the termsof the GNU General Public License v2
+
+
+SUMMARY="LXNetdaemon is a fast, lightweight, stand-alone network manager."
+DESCRIPTION="
+"
+HOMEPAGE="http://lxde.org"
+DOWNLOADS="mirror://sourceforge/lxde/${PNV}.tar.gz"
+REMOTE_IDS="sourceforge:lxde"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    >=x11-libs/gtk+-2
+"
+
