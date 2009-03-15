@@ -8,7 +8,9 @@ DESCRIPTION="Allegro is a game programming library for C/C++ developers distribu
 
 HOMEPAGE="http://alleg.sourceforge.net/"
 DOWNLOADS="mirror://sourceforge/alleg/${PNV}.tar.gz"
-REMOTE_IDS="freshmeat:allegro"
+
+BUGS_TO="jedahan@gmail.com"
+REMOTE_IDS="freshmeat:${PN}"
 
 LICENCES="as-is"
 SLOT="0"
