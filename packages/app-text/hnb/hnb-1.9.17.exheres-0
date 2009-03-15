@@ -5,6 +5,8 @@ SUMMARY="Hierarchical notebook helps structure many kinds of data in one place"
 HOMEPAGE="http://${PN}.sourceforge.org/"
 DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.gz"
 
+BUGS_TO="jedahan@gmail.com"
+
 LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64 ~x86"
