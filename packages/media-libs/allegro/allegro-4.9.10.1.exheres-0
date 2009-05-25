@@ -3,7 +3,7 @@
 
 require cmake
 
-SUMMARY="A cross-platform game programming library for C/C++ developers."
+SUMMARY="A game programming library"
 DESCRIPTION="Allegro is a game programming library for C/C++ developers distributed freely, supporting the following platforms: DOS, Unix (Linux, FreeBSD, Irix, Solaris, Darwin), Windows, QNX, BeOS and MacOS X. It provides many functions for graphics, sounds, player input (keyboard, mouse and joystick) and timers. It also provides fixed and floating point mathematical functions, 3d functions, file management functions, compressed datafile and a GUI."
 
 HOMEPAGE="http://alleg.sourceforge.net/"
@@ -17,21 +17,27 @@ SLOT="0"
 PLATFORMS="~amd64 ~x86"
 MYOPTIONS="
     alsa
-    d3d [[ description = [ Adds Direct3d support (for windows development) ] ]]
-    doc [[ description = [ Adds html and info documentation ] ]]
+    d3d [[ description = [ Direct3d support (for windows development) ] ]]
+    doc [[ description = [ html and info documentation ] ]]
     flac
     jpeg
     openal 
     opengl
     oss 
+    physfs [[ description = [ File i/o abstraction ] ]]
     png 
-    sndfile [[ description = [ Adds WAV/AIFF/FLAC audio codec support ] ]]
+    sndfile [[ description = [ WAV/AIFF/FLAC audio codec support ] ]]
     ttf 
     vorbis
     x11
     "
 DEPENDENCIES="
     flac? ( media-libs/flac )
+    png? ( media-libs/libpng )
+    vorbis? ( media-libs/libvorbis )
+    sndfile? ( media-libs/libsndfile )
+    openal? ( media-libs/openal )
+    physfs? ( dev-games/physfs )
 "
 
 CMAKE_SRC_CONFIGURE_OPTION_WANTS=( 'd3d D3D', 'doc DOCS_INFO', 'doc DOCS_HTML', 'flac FLAC', 'jpeg JPEG', 'openal OPENAL', 'opengl OPENGL', 'oss OSS', 'png PNG', 'sndfile SNDFILE', 'ttf TTF', 'vorbis VORBIS', 'x11 X11' )
