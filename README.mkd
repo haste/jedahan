@@ -4,7 +4,7 @@ Jonathan Dehan's <jedahan@gmail.com> supplemental exherbo repository.
 
 Todo
 ----
-
-    media-libs/allegro: how2run default in cmake_install?
-      net-apps/connman: intel project, looks promising
-         plugins/gedit: might not be hard
+       
+       media-libs/allegro: fix cmake_install, deps
+         net-apps/connman: intel project, looks promising
+    plugins/gedit-plugins: might not be hard
