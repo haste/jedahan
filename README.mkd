@@ -8,3 +8,4 @@ Todo
        media-libs/allegro: fix cmake_install, deps
          net-apps/connman: intel project, looks promising
     plugins/gedit-plugins: might not be hard
+    media-libs/processing: wait for java
