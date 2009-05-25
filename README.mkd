@@ -5,8 +5,6 @@ Jonathan Dehan's <jedahan@gmail.com> supplemental exherbo repository.
 Todo
 ----
     media-libs/allegro: how2run default in cmake_install?
-      x11-apps/lxpanel: check for libintl
-         net-apps/lxnm: depends on lxpanel
       net-apps/connman: intel project, looks promising
    dev-util/codeblocks: nightmare with wxGTK
          plugins/gedit: might not be hard
