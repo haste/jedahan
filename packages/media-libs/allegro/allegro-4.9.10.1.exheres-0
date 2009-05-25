@@ -32,20 +32,20 @@ MYOPTIONS="
     x11
     "
 DEPENDENCIES="
+    alsa? ( sys-sound/alsa-lib )
     flac? ( media-libs/flac )
+    jpeg? ( media-libs/jpeg )
     png? ( media-libs/libpng )
-    vorbis? ( media-libs/libvorbis )
-    sndfile? ( media-libs/libsndfile )
     openal? ( media-libs/openal )
+    opengl? ( x11-dri/mesa )
     physfs? ( dev-games/physfs )
+    sndfile? ( media-libs/libsndfile )
+    vorbis? ( media-libs/libvorbis )
 "
 
 CMAKE_SRC_CONFIGURE_OPTION_WANTS=( 'd3d D3D', 'doc DOCS_INFO', 'doc DOCS_HTML', 'flac FLAC', 'jpeg JPEG', 'openal OPENAL', 'opengl OPENGL', 'oss OSS', 'png PNG', 'sndfile SNDFILE', 'ttf TTF', 'vorbis VORBIS', 'x11 X11' )
 
-# NOTE: This is wrong, don't do this
-cmake_src_install() {
-     # We run default_src_install from ${ECMAKE_BUILD_DIR}, so it doesn't look for docs in ${WORK}.
-    [[ -d ${ECMAKE_BUILD_DIR} ]] && DEFAULT_SRC_INSTALL_EXTRA_PREFIXES+=( "${WORK}/" )
-    _cmake_run default_src_install
+src_install() {
+    cmake_src_install
     dosym lib${PNV}.so /usr/$(get_libdir)/lib${PN}.so
 }
