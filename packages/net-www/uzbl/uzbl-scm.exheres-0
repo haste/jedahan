@@ -14,7 +14,6 @@ LICENCES="LGPL-2.1 MPL-1.1"
 SLOT="0"
 PLATFORMS="~amd64"
 
-# needs webkit[soup]
 DEPENDENCIES="
     build:
         dev-util/pkg-config[>=0.19]
@@ -24,9 +23,4 @@ DEPENDENCIES="
         x11-libs/gtk+
         dmenu? ( x11-misc/dmenu )
         zenity? ( gnome-extra/zenity )"
-
-#src_install() {
-#	emake -j1 DESTDIR="${D}" install || die "Installation failed"
-#	dodoc AUTHORS ChangeLog NEWS README
-#}
 
