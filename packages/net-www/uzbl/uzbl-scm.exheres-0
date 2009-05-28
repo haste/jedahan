@@ -22,5 +22,5 @@ DEPENDENCIES="
         gnome-desktop/libsoup
         x11-libs/gtk+
         dmenu? ( x11-misc/dmenu )
-        zenity? ( gnome-extra/zenity )"
+        zenity? ( gnome-desktop/zenity )"
 
