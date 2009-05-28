@@ -25,7 +25,6 @@ DEPENDENCIES="
         dmenu? ( x11-misc/dmenu )
         zenity? ( gnome-extra/zenity )"
 
-DEFAULT_SRC_INSTALL_EXTRA_DOCS=( 'Changelog' )
 #src_install() {
 #	emake -j1 DESTDIR="${D}" install || die "Installation failed"
 #	dodoc AUTHORS ChangeLog NEWS README
