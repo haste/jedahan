@@ -9,7 +9,7 @@ BUGS_TO="jedahan@gmail.com"
 
 LICENCES="GPL-3"
 SLOT="0"
-PLATFORMS="~amd64 ~x86"
+PLATFORMS="~amd64"
 
 src_install(){
     dodoc README doc/hnbrc
