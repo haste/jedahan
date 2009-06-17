@@ -1,0 +1,67 @@
+# Copyright 2009 Jonathan Dahan
+# Based on the firehol ebuild which is:
+#   Copyright 1999-2009 Gentoo Foundation
+#   Distributed under the terms of the GNU General Public License v2
+
+# TODO: When Exherbo has sane handling of kernel options:
+#   SHOULD_HAVE="NF_CONNTRACK NF_CONNTRACK_IPV4 NF_CONNTRACK_MARK \
+#		IP_NF_IPTABLES IP_NF_FILTER IP_NF_TARGET_REJECT \
+#		IP_NF_TARGET_LOG IP_NF_TARGET_ULOG NF_NAT \
+#		IP_NF_TARGET_MASQUERADE IP_NF_TARGET_REDIRECT IP_NF_MANGLE"   
+
+SUMMARY="iptables firewall generator"
+HOMEPAGE="http://firehol.sourceforge.net/"
+DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.bz2"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    build+run:
+        sys-apps/iproute2
+    run:
+        net-firewall/iptables
+        sys-apps/busybox
+	    || (
+		net-misc/wget
+		net-misc/curl
+	    )"
+
+# TODO: Check against the following 
+#pkg_setup() {
+    # perform checks for kernel config from eclass linux-info
+    # for now we just print warnings as I am not sure if these
+    # are required always...
+    KERNEL_OPTIONS="~NF_CONNTRACK ~NF_CONNTRACK_IPV4 ~NF_CONNTRACK_MARK \
+		~IP_NF_IPTABLES ~IP_NF_FILTER ~IP_NF_TARGET_REJECT \
+		~IP_NF_TARGET_LOG ~IP_NF_TARGET_ULOG ~NF_NAT \
+		~IP_NF_TARGET_MASQUERADE ~IP_NF_TARGET_REDIRECT ~IP_NF_MANGLE"
+#    kernel-info_pkg_setup
+#}
+
+src_install() {
+    newsbin firehol.sh firehol
+
+    insinto /etc/firehol/examples
+    doins examples/*
+
+    newconfd "${FILES}/firehol.conf.d" firehol
+
+    dodoc ChangeLog README TODO WhatIsNew
+
+    docinto scripts
+    dodoc get-iana.sh adblock.sh
+
+    doman man/*.1 man/*.5
+
+    newinitd "${FILES}/firehol.initrd" firehol
+}
+
+pkg_postinst() {
+    # Install a default configuration if none is available yet
+    if [[ ! -e "${ROOT}/etc/firehol/firehol.conf" ]]; then
+        einfo "Installing a sample configuration as ${ROOT}/etc/firehol/firehol.conf"
+        cp "${ROOT}/etc/firehol/examples/client-all.conf" "${ROOT}/etc/firehol/firehol.conf"
+    fi
+}
