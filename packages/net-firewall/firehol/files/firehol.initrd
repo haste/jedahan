@@ -1,14 +1,14 @@
 #!/sbin/runscript
-# Copyright 1999-2004 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
 
-opts="start stop restart try status panic save"
+# Copyright 2009 Jonathan Dahan
+# Based of firehol initrd which is
+#     Copyright 1999-2004 Gentoo Foundation
+#     Distributed under the terms of the GNU General Public License v2
 
 depend() {
 	need localmount
 	after bootmisc
 	before net
-	provide firewall
 }
 
 checkrules() {
@@ -34,10 +34,10 @@ stop() {
 }
 
 restart() {
-        ebegin "Restarting Firewall"
-                svc_stop;
-                svc_start;
-        eend $?
+    ebegin "Restarting Firewall"
+        svc_stop;
+        svc_start;
+    eend $?
 }
 
 
