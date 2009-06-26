@@ -1,0 +1,26 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+
+SUMMARY="Cleans up --uninstall-unused"
+DESCRIPTION="Fake dependencies - maybe these should be bugreported"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    app-text/docbook-xml-dtd
+    group/audio
+    group/haldaemon
+    group/mysql
+    group/news
+    group/paludisbuild
+    group/smmsp
+    group/sshd
+    group/utmp
+    group/uucp
+    user/haldaemon
+    user/mysql
+    user/news
+    user/smmsp
+    user/uucp
+"
