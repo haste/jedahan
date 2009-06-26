@@ -1,9 +1,10 @@
-# Copyright 2009 Jonathan Dahan
-# Based on the firehol ebuild which is:
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+# Based on net-firewall/firehol-1.273.ebuild which is:
 #   Copyright 1999-2009 Gentoo Foundation
 #   Distributed under the terms of the GNU General Public License v2
 
-# TODO: When Exherbo has sane handling of kernel options:
+# TODO: When Exherbo has sane handling of kernel options, check against:
 #   SHOULD_HAVE="NF_CONNTRACK NF_CONNTRACK_IPV4 NF_CONNTRACK_MARK \
 #		IP_NF_IPTABLES IP_NF_FILTER IP_NF_TARGET_REJECT \
 #		IP_NF_TARGET_LOG IP_NF_TARGET_ULOG NF_NAT \
@@ -28,18 +29,6 @@ DEPENDENCIES="
 		net-misc/curl
 	    )"
 
-# TODO: Check against the following 
-#pkg_setup() {
-    # perform checks for kernel config from eclass linux-info
-    # for now we just print warnings as I am not sure if these
-    # are required always...
-    KERNEL_OPTIONS="~NF_CONNTRACK ~NF_CONNTRACK_IPV4 ~NF_CONNTRACK_MARK \
-		~IP_NF_IPTABLES ~IP_NF_FILTER ~IP_NF_TARGET_REJECT \
-		~IP_NF_TARGET_LOG ~IP_NF_TARGET_ULOG ~NF_NAT \
-		~IP_NF_TARGET_MASQUERADE ~IP_NF_TARGET_REDIRECT ~IP_NF_MANGLE"
-#    kernel-info_pkg_setup
-#}
-
 src_install() {
     newsbin firehol.sh firehol
 
@@ -59,7 +48,6 @@ src_install() {
 }
 
 pkg_postinst() {
-    # Install a default configuration if none is available yet
     if [[ ! -e "${ROOT}/etc/firehol/firehol.conf" ]]; then
         einfo "Installing a sample configuration as ${ROOT}/etc/firehol/firehol.conf"
         cp "${ROOT}/etc/firehol/examples/client-all.conf" "${ROOT}/etc/firehol/firehol.conf"
