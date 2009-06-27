@@ -1,0 +1,34 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="3D tank combat simulator game"
+DESCRIPTION=""
+
+HOMEPAGE="http://www.bzflag.org/"
+DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.bz2"
+
+BUGS_TO="jedahan@gmail.com"
+REMOTE_IDS="sourceforge:${PN}"
+
+LICENCES="LGPL-2.1"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    >=net-misc/curl-7.15.0
+	sys-libs/ncurses
+	net-dns/c-ares
+    x11-dri/freeglut
+	media-libs/SDL
+	media-libs/glew
+	x11-libs/libICE
+	x11-libs/libSM
+	x11-libs/libX11
+	x11-libs/libXau
+	x11-libs/libXdmcp
+	x11-libs/libXext
+	x11-libs/libXi
+	x11-libs/libXmu
+	x11-libs/libXt
+	x11-libs/libXxf86vm"
