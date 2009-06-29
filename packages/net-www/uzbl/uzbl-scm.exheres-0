@@ -3,13 +3,13 @@
 
 SCM_REPOSITORY="git://github.com/Dieterbe/uzbl.git"
 
-require flag-o-matic scm-git
+require scm-git
 
 SUMMARY="A keyboard controlled modal browser based on Webkit."
 HOMEPAGE="http://www.uzbl.org"
 DOWNLOADS=""
 
-MYOPTIONS="dmenu zenity"
+MYOPTIONS=""
 LICENCES="LGPL-2.1 MPL-1.1"
 SLOT="0"
 PLATFORMS="~amd64"
@@ -21,6 +21,10 @@ DEPENDENCIES="
         net-libs/webkit-gtk
         gnome-desktop/libsoup
         x11-libs/gtk+
-        dmenu? ( x11-misc/dmenu )
-        zenity? ( gnome-desktop/zenity )"
+    post,suggested:
+        gnome-desktop/zenity
+        x11-misc/dmenu
+"
 
+# The test target only launches uzbl, which fails
+RESTRICT="test"
