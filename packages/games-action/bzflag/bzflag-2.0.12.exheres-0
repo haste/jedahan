@@ -16,7 +16,7 @@ PLATFORMS="~amd64"
 MYOPTIONS=""
 
 DEPENDENCIES="
-    >=net-misc/curl-7.15.0
+    net-misc/curl[>=7.15.0]
 	sys-libs/ncurses
 	net-dns/c-ares
     x11-dri/freeglut
