@@ -32,15 +32,16 @@ MYOPTIONS="
     x11
     "
 DEPENDENCIES="
-    alsa? ( sys-sound/alsa-lib )
-    flac? ( media-libs/flac )
-    jpeg? ( media-libs/jpeg )
-    png? ( media-libs/libpng )
-    openal? ( media-libs/openal )
-    opengl? ( x11-dri/mesa )
-    physfs? ( dev-games/physfs )
-    sndfile? ( media-libs/libsndfile )
-    vorbis? ( media-libs/libvorbis )
+    build+run:
+        alsa? ( sys-sound/alsa-lib )
+        flac? ( media-libs/flac )
+        jpeg? ( media-libs/jpeg )
+        png? ( media-libs/libpng )
+        openal? ( media-libs/openal )
+        opengl? ( x11-dri/mesa )
+        physfs? ( dev-games/physfs )
+        sndfile? ( media-libs/libsndfile )
+        vorbis? ( media-libs/libvorbis )
 "
 
 CMAKE_SRC_CONFIGURE_OPTION_WANTS=( 'd3d D3D', 'doc DOCS_INFO', 'doc DOCS_HTML', 'flac FLAC', 'jpeg JPEG', 'openal OPENAL', 'opengl OPENGL', 'oss OSS', 'png PNG', 'sndfile SNDFILE', 'ttf TTF', 'vorbis VORBIS', 'x11 X11' )

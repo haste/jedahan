@@ -1,4 +1,4 @@
-# Copyright 2009 Jonatan Dahan
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
 SCM_REPOSITORY="git://github.com/Dieterbe/uzbl.git"
@@ -6,21 +6,25 @@ SCM_REPOSITORY="git://github.com/Dieterbe/uzbl.git"
 require scm-git
 
 SUMMARY="A keyboard controlled modal browser based on Webkit."
+DESCRIPTION=""
+
 HOMEPAGE="http://www.uzbl.org"
 DOWNLOADS=""
 
-MYOPTIONS=""
+BUGS_TO="jedahan@gmail.com"
+REMOTE_IDS=""
+
 LICENCES="LGPL-2.1 MPL-1.1"
 SLOT="0"
 PLATFORMS="~amd64"
+MYOPTIONS=""
 
 DEPENDENCIES="
+    build+run:
+        x11-libs/gtk
+        net-libs/webkit-gtk
     build:
         dev-util/pkg-config[>=0.19]
-    build+run:
-        net-libs/webkit-gtk
-        gnome-desktop/libsoup
-        x11-libs/gtk+
     post,suggested:
         gnome-desktop/zenity
         x11-misc/dmenu

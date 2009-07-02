@@ -2,14 +2,18 @@
 # Distributed under the terms of the GNU General Public License v2
 
 SUMMARY="Hierarchical notebook helps structure many kinds of data in one place"
+DESCRIPTION=""
+
 HOMEPAGE="http://${PN}.sourceforge.org/"
 DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.gz"
 
 BUGS_TO="jedahan@gmail.com"
+REMOTE_IDS="sourceforge:${PN}"
 
 LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64"
+MYOPTIONS=""
 
 src_install(){
     dodoc README doc/hnbrc
