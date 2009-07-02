@@ -22,6 +22,7 @@ MYOPTIONS=""
 DEPENDENCIES="
     build+run:
         x11-libs/gtk
+        gnome-desktop/libsoup
         net-libs/webkit-gtk
     build:
         dev-util/pkg-config[>=0.19]
