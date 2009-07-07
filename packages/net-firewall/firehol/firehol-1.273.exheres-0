@@ -9,8 +9,9 @@
 #		IP_NF_TARGET_LOG IP_NF_TARGET_ULOG NF_NAT \
 #		IP_NF_TARGET_MASQUERADE IP_NF_TARGET_REDIRECT IP_NF_MANGLE"   
 
-SUMMARY="iptables firewall generator"
-DESCRIPTION=""
+SUMMARY="iptables stateful packet filtering firewall builder"
+DESCRIPTION="FireHOL is an iptables firewall generator producing stateful iptables packet filtering firewalls, on Linux hosts and routers with any number of network interfaces, any number of routes, any number of services served, any number of complexity between variations of the services (including positive and negative expressions).
+FireHOL is a language to express firewalling rules, not just a script that produces some kind of a firewall."
 
 HOMEPAGE="http://${PN}.sourceforge.net/"
 DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.bz2"
@@ -18,7 +19,6 @@ DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.bz2"
 LICENCES="GPL-2"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS=""
 
 DEPENDENCIES="
     build+run:
