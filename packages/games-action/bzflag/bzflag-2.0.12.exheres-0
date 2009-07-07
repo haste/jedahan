@@ -1,7 +1,7 @@
 # Copyright 2009 Jonathan Dahan
 # Distributed under the terms of the GNU General Public License v2
 
-SUMMARY="3D tank combat simulator game"
+SUMMARY="online multiplayer 3D tank battle game"
 DESCRIPTION=""
 
 HOMEPAGE="http://www.bzflag.org/"
