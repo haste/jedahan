@@ -4,16 +4,11 @@
 SUMMARY="Cleans up --uninstall-unused"
 DESCRIPTION="Fake dependencies - maybe these should be bugreported"
 
-HOMEPAGE=""
-DOWNLOADS=""
-
 BUGS_TO="jedahan@gmail.com"
-REMOTE_IDS=""
 
 LICENCES="GPL-2"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS=""
 
 DEPENDENCIES="
     app-text/docbook-xml-dtd
