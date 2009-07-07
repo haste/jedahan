@@ -10,7 +10,7 @@ HOMEPAGE="http://alleg.sourceforge.net/"
 DOWNLOADS="mirror://sourceforge/alleg/${PNV}.tar.gz"
 
 BUGS_TO="jedahan@gmail.com"
-REMOTE_IDS="freshmeat:${PN}"
+REMOTE_IDS="freshmeat:alleg"
 
 LICENCES="as-is"
 SLOT="0"
