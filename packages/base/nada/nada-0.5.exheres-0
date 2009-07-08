@@ -1,0 +1,26 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="NaDa does nothing for everybody"
+DESCRIPTION="NaDa is a new concept. A thought, really. It is very light : 1 byte. It doesn't take long to fetch. It doesn't take long to understand. It doesn't disturb your habits nor does it makes you feel insecure. It is a reassuring piece of software that does nothing, and does it very well. That's a lot !"
+
+HOMEPAGE="http://www.bernardbelanger.com/computing/NaDa/"
+DOWNLOADS="http://www.bernardbelanger.com/computing/NaDa/download/NaDa_0_5.tar"
+
+BUGS_TO="jedahan@gmail.com"
+
+LICENCES="as-is"
+SLOT="0"
+PLATFORMS="~amd64"
+
+src_unpack() {
+    default
+    chmod +x NaDa_0.5
+    ln -s NaDa_0.5 nada
+    mkdir ${WORK}
+    mv NaDa_0.5 nada ${WORK}
+}
+
+src_install(){
+    dobin NaDa_0.5 nada
+}
