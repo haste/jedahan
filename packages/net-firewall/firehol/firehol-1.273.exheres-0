@@ -26,10 +26,7 @@ DEPENDENCIES="
     run:
         net-firewall/iptables
         sys-apps/busybox
-	    || (
-		net-misc/wget
-		net-misc/curl
-	    )"
+	    "
 
 src_install() {
     newsbin firehol.sh firehol
