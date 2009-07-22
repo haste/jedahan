@@ -22,10 +22,6 @@ MYOPTIONS=""
 DEPENDENCIES="
     build+run:
         sys-libs/pam
-    build:
-        sys-devel/libtool
-    run:
-        net-misc/openssh
 "
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( --with-pam-dir=$(getpam_mod_dir) )

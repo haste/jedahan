@@ -16,7 +16,6 @@ MYOPTIONS=""
 
 DEPENDENCIES="
     build+run:
-        sys-libs/zlib
         media-libs/libpng
 "
 

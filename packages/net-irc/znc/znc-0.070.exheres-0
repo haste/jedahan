@@ -17,8 +17,7 @@ MYOPTIONS="debug ipv6 modules perl ssl"
 
 DEPENDENCIES="
     build+run:
-        ssl? ( dev-libs/openssl[>=0.9.7d] )
-        perl? ( dev-lang/perl )"
+        ssl? ( dev-libs/openssl[>=0.9.7d] )"
 
 DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'debug' 'ipv6' 'modules' 'perl' 'ssl openssl' )
 

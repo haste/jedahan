@@ -18,7 +18,6 @@ MYOPTIONS=""
 DEPENDENCIES="
     build+run:
         net-misc/curl[>=7.15.0]
-    	sys-libs/ncurses
     	net-dns/c-ares
         x11-dri/freeglut
     	media-libs/SDL

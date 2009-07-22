@@ -24,11 +24,7 @@ DEPENDENCIES="
     build+run:
         sys-apps/iproute2
     run:
-        net-firewall/iptables
-        sys-apps/busybox
-    post,suggested:
-        net-misc/wget [[ description = [ used in adblocking and reserved ip scripts ] ]]
-	    "
+        net-firewall/iptables"
 
 src_install() {
     newsbin firehol.sh firehol
