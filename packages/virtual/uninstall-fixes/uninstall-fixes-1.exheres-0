@@ -14,8 +14,6 @@ DEPENDENCIES="
     app-text/docbook-xml-dtd
     group/audio
     group/haldaemon
-    group/man
-    group/mysql
     group/news
     group/paludisbuild
     group/smmsp
@@ -23,8 +21,6 @@ DEPENDENCIES="
     group/utmp
     group/uucp
     user/haldaemon
-    user/man
-    user/mysql
     user/news
     user/smmsp
     user/uucp
