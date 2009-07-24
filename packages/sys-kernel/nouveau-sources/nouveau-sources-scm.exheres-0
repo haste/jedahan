@@ -1,0 +1,31 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SCM_REPOSITORY="git://anongit.freedesktop.org/nouveau/linux-2.6"
+
+require scm-git
+
+SUMMARY="Nouveau project's kernel sources"
+DESCRIPTION="A project which aims at producing Open Source 3D drivers for nVidia cards. 'nouveau' is the french word for 'new'. "
+
+HOMEPAGE="http://nouveau.freedesktop.org"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+
+src_prepare() {
+    :
+}
+
+src_compile() {
+    :
+}
+
+src_test() {
+    :
+}
+
+src_install() {
+    :
+}

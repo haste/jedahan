@@ -1,0 +1,65 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require gnome-2
+
+DESCRIPTION="Music management and playback software for GNOME"
+HOMEPAGE="http://www.rhythmbox.org/"
+LISENSES="GPL-2"
+PLATFORMS="~amd64"
+MYOPTIONS="cdr daap dbus doc hal ipod gnome-keyring libnotify lirc musicbrainz mtp
+nsplugin python taglib test"
+
+# I want tagwriting to be on by default in the future. It is just a local flag
+# now because it is still considered experimental by upstream and doesn't work
+# well with all formats due to gstreamer limitation.
+
+# FIXME: double check what to do with fm-radio plugin an itunes browser
+
+SLOT="0"
+
+DEPENDENCIES="
+    build+run:
+        x11-libs/gtk+[>=2.8]
+    	gnome-platform/libgnomeui[>=2]
+    	gnome-platform/libglade[>=2]
+    	gnome-platform/gnome-vfs[>=2.8]
+    	gnome-desktop/totem-pl-parser[>=2.22.0]
+    	cdr? ( gnome-extra/nautilus-cd-burner[>=2.13] )
+    	x11-libs/libsexy[>=0.1.5]
+    	gnome-desktop/gnome-media[>=2.14.0]
+    	gnome-keyring? ( gnome-platform/gnome-keyring[>=0.4.9] )
+    	musicbrainz? ( media-libs/musicbrainz[>=2.1] )
+	    gnome-desktop/libsoup[>=2.4]
+    	lirc? ( app-misc/lirc )
+    	hal? (
+    		ipod? ( media-libs/libgpod[>=0.6] )
+    		mtp? ( media-libs/libmtp[>=0.3.0] )
+    		sys-apps/hal[>=0.5] )
+    	daap? ( net-dns/avahi[>=0.6] )
+    	dbus? ( dev-libs/dbus-glib[>=0.71] )
+    	media-plugins/gst-plugins-base[>=0.10.12]
+    	libnotify? ( x11-libs/libnotify[>=0.3.2] )
+    	taglib? ( media-plugins/gst-plugins-taglib[>=0.10.6] )
+        gnome-bindings/gnome-python
+    	python? (
+    		dev-lang/python[>=2.4.2]
+    		|| (
+    			dev-lang/python[>=2.5]
+    			dev-python/celementtree )
+    		dev-python/pygtk[>=2.8]
+    		dev-python/gnome-vfs-python[>=2.22.0]
+    		dev-python/gconf-python[>=2.22.0]
+    		dev-python/libgnome-python[>=2.22.0]
+    		dev-python/gst-python[>=0.10.8] )
+    	nsplugin? ( || (
+    		net-libs/xulrunner
+    		www-client/seamonkey
+    		www-client/mozilla-firefox ) )
+    	dev-util/pkg-config
+    	dev-util/intltool[>=0.35]
+    	doc? ( dev-util/gtk-doc[>=1.4] )
+    	test? ( dev-libs/check )"
+
+
+#EXTRA_DOCS="DOCUMENTERS INTERNALS MAINTAINERS README.iPod THANKS"
