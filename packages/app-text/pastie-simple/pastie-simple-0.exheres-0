@@ -5,9 +5,8 @@
 
 SUMMARY="simple command line interface to pastie"
 DESCRIPTION=""
-HOMEPAGE="http://pastie.org/paste/579"
-#DOWNLOADS="http://pastie.org/579.txt -> pastie.in"
-DOWNLOADS="http://pastie.org/pastes/579/download -> pastie.in"
+HOMEPAGE="http://pastie.org/paste/98642"
+DOWNLOADS="http://pastie.org/98642.txt -> pastie.in"
 
 LICENCES="AS-IS"
 SLOT="0"
@@ -15,6 +14,8 @@ PLATFORMS="~amd64"
 MYOPTIONS=""
 
 DEPENDENCIES="
+    build+run:
+        !app-text/pastie
     run:
         dev-lang/ruby"
 
@@ -23,8 +24,8 @@ BUGS_TO=""
 WORK=${WORKBASE}
 
 src_install() {
-    echo "#! /usr/bin/ruby" > ${WORK}/pst
-    cat ${FETCHEDDIR}/pastie.in >> ${WORK}/pst
-    dobin pst
+    echo "#! /usr/bin/ruby" > ${WORK}/pastie
+    cat ${FETCHEDDIR}/pastie.in >> ${WORK}/pastie
+    dobin pastie
 }
 
