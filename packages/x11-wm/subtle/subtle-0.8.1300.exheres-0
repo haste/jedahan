@@ -1,0 +1,29 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="semi-automatic tiling window manager scriptable with ruby"
+DESCRIPTION="subtle is a semi-automatic tiling window manager with a strong focus on easy but customizable handling and look and feel. Semi-automatic tiling means that there is no layout enforcement or general rule: Clients can freely be arranged in different positions of a variable grid."
+HOMEPAGE="http://unexist.scrapping.cc/projects/subtle"
+DOWNLOADS="http://unexist.scrapping.cc/attachments/download/8/${PNV}-delta.tbz2 -> ${PNV}.tar.bz2"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-lang/ruby:1.8
+        dev-ruby/rake[>=0.8]
+        x11-libs/libX11
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+src_compile() {
+    rake
+}
+
+src_compile() {
+    rake install
+}
