@@ -19,7 +19,7 @@ DEPENDENCIES="
     run:
         dev-lang/ruby"
 
-BUGS_TO=""
+BUGS_TO="jedahan@gmail.com"
 
 WORK=${WORKBASE}
 
