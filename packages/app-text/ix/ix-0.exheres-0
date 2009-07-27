@@ -1,0 +1,43 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the GNU General Public Licence v2
+
+SUMMARY="A pastebin. A nerdy pastebin."
+DESCRIPTION="
+GET:
+    http://ix.io/{ID,ID/LANG,user/USER}
+
+POST:
+
+    http://ix.io?f:N=[&name:N=][&ext:N=][&login=&token=[&rm=][&id:N=]
+
+    f:N       urlencoded contents. required.
+    name:N    filename. optional.
+    ext:N     filetype. optional.
+    login     optional. First time creates a login.
+    token     required if login. Don't use an important password, I suck at security.
+    rm        id to delete. login required.
+    id:N      id to replace. login required
+        where N is a unique number within request. (This allows you to post multiple files at once.)
+"
+HOMEPAGE="http://ix.io"
+DOWNLOADS="http://ix.io/client -> ix"
+
+LICENCES="as-is"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+
+DEPENDENCIES="
+    run:
+        dev-lang/python
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+WORK="${WORKBASE}"
+
+src_install() {
+    cp ${FETCHEDDIR}/ix ${WORK}/
+    wget http://ix.io -O README
+    dobin ix
+    emagicdocs
+}
