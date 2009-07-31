@@ -11,7 +11,7 @@ SLOT="0"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
-    app-text/docbook-xml-dtd
+    app-text/docbook-xml-dtd:4.5
     group/audio
     group/haldaemon
     group/news
