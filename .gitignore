@@ -3,3 +3,5 @@ packages/dev-java/
 packages/media-sound/
 packages/sys-kernel/
 packages/x11-apps/
+packages/app-shells/fish/zsh*
+Makefile
