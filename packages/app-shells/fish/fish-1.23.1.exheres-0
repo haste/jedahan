@@ -1,0 +1,50 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+DESCRIPTION="fish is the Friendly Interactive SHell"
+HOMEPAGE="http://fishshell.org/"
+DOWNLOADS="http://fishshell.org/files/${PV}/${PNV}.tar.bz2"
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS="X [[ description = [ enable xsel ] ]]"
+
+DEPENDENCIES="
+    build:
+        app-doc/doxygen
+    build+run:
+        sys-libs/ncurses
+    	sys-devel/bc
+    	www-client/htmlview
+    	X? ( x11-misc/xsel )"
+
+#PATCHES=( "${FILESDIR}/${P}-glibc-2.8.patch" )
+
+src_compile() {
+        econf \
+        --bindir=/bin \
+        --libdir=/usr/$(get_libdir) \
+        --docdir=/usr/share/doc/${PNVR} \
+        --htmldir=/usr/share/doc/${PNVR}/html \
+        --enable-etcdir=/etc/{$PN} \
+        $(option_enable X xsel)
+}
+
+
+src_install() {
+    default
+
+    # TODO: mv /etc/fish.d/completions to ${ROOT}usr/share/fish/completions?
+    dodir /etc/${PN}
+    insinto /etc/${PN}
+    doins "${FILES}"/{zshenv,zshrc}
+    keepdir /etc/zsh/site-functions
+
+    keepdir /usr/share/zsh/site-functions
+    insinto /usr/share/${PN}/
+    doins -r "${WORK}"/{Util,Misc}
+
+    insinto /usr/share/doc/${PNVR}
+    doins -r "${WORK}"/StartupFiles
+    #emake DESTDIR="${D}" install
+}
