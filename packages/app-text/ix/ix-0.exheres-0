@@ -36,7 +36,7 @@ BUGS_TO="jedahan@gmail.com"
 WORK="${WORKBASE}"
 
 src_install() {
-    cp ${FETCHEDDIR}/ix ${WORK}/
+    cp "${FETCHEDDIR}"/ix "${WORK}/"
     wget http://ix.io -O README
     dobin ix
     emagicdocs

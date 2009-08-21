@@ -17,8 +17,8 @@ src_unpack() {
     default
     chmod +x NaDa_0.5
     ln -s NaDa_0.5 nada
-    mkdir ${WORK}
-    mv NaDa_0.5 nada ${WORK}
+    mkdir "${WORK}"
+    mv NaDa_0.5 nada "${WORK}"
 }
 
 src_install(){

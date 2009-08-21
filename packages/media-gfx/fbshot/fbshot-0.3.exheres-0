@@ -22,6 +22,6 @@ DEPENDENCIES="
 
 src_install() {
     dobin fbshot
-    mv fbshot.1.man ${WORK}/fbshot.1
+    mv fbshot.1.man "${WORK}"/fbshot.1
     doman fbshot.1
 }

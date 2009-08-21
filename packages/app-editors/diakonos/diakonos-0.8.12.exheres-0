@@ -21,6 +21,6 @@ DEPENDENCIES="
 "
 
 src_install() {
-        cd ${WORK}
-        ruby19 install.rb --dest-dir "${IMAGE}" || die "install failed"
+    cd "${WORK}"
+    ruby19 install.rb --dest-dir "${IMAGE}" || die "install failed"
 }
