@@ -1,6 +1,5 @@
-packages/dev-java/
-packages/media-sound/
-packages/sys-kernel/
-packages/x11-apps/
-packages/app-shells/fish/zsh*
-Makefile
+packages/app-shells/fish/
+packages/dev-java/jruby/
+packages/games-action/sandwich/
+packages/sys-kernel/nouveau-sources/
+packages/x11-apps/workrave/
