@@ -4,7 +4,7 @@
 #   Copyright 1999-2009 Gentoo Foundation
 
 DESCRIPTION="Intel IA32 microcode update data"
-HOMEPAGE="http://urbanmyth.org/microcode/"
+HOMEPAGE="http://downloadcenter.intel.com/default.aspx"
 DOWNLOADS="http://downloadmirror.intel.com/14303/eng/microcode-${PV}.tgz"
 
 LICENCES="as-is"
