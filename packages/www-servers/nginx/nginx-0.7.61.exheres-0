@@ -6,7 +6,7 @@
 require nginx toolchain-funcs
 
 SLOT="0"
-PLATFORMS="amd64"
+PLATFORMS="~amd64"
 MYOPTIONS="addition debug fastcgi flv imap pcre perl random-index status sub webdav zlib"
 
 DEPENDENCIES="
