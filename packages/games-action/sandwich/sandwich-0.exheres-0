@@ -1,0 +1,28 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="make me a sandwich"
+DESCRIPTION="makes a sandwich"
+HOMEPAGE="http://overbenny.wordpress.com/2009/07/25/sandwich-makefile/"
+DOWNLOADS=""
+
+LICENCES="as-is"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    run:
+        sys-devel/make
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+WORK="${WORKBASE}"
+
+src_install() {
+    # TODO: figure out a way to non-destructively be able to run
+    # 'make me a sandwich' in any directory 
+    cp "${FILES}"/Makefile "${WORK}/"
+    dodoc Makefile
+}
