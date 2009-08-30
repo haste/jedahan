@@ -1,0 +1,28 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+# Based in part upon 'normalize-0.7.7.ebuild', which is
+#   Copyright 1999-2007 Gentoo Foundation
+
+SUMMARY="Audio file volume normalizer"
+HOMEPAGE="http://normalize.nongnu.org/"
+DOWNLOADS="http://nongnu.org/download/${PN}/${PNV}.tar.bz2"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS="audiofile mp3 nls"
+
+DEPENDENCIES="
+    build:
+    	nls? ( dev-util/intltool )
+    build+run:
+	    media-libs/audiofile
+        mp3? ( media-libs/libmad )
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( --disable-xmms )
+DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( 'mp3 mad' 'audiofile' )
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'nls')
+
