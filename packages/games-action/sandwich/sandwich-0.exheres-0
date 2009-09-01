@@ -1,8 +1,11 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
+BUGS_TO="jedahan@gmail.com"
+
 SUMMARY="make me a sandwich"
 DESCRIPTION="makes a sandwich"
+
 HOMEPAGE="http://overbenny.wordpress.com/2009/07/25/sandwich-makefile/"
 DOWNLOADS=""
 
@@ -15,8 +18,6 @@ DEPENDENCIES="
     run:
         sys-devel/make
 "
-
-BUGS_TO="jedahan@gmail.com"
 
 WORK="${WORKBASE}"
 

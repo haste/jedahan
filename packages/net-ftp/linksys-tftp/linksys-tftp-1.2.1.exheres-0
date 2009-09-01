@@ -1,17 +1,18 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
+BUGS_TO="jedahan@gmail.com"
+
 SUMMARY="TFTP client suitable for uploading to the Linksys WRT54G Wireless Router"
 DESCRIPTION="TFTP Client for *BSD/Linux customized for a non-standard tftp authentication process. Common hardware includes the BEFW11."
 
 HOMEPAGE="http://redsand.net/projects/${PN}"
 DOWNLOADS="http://redsand.net/projects/linksys-tftp/pub/${PNV}.tar.bz2"
 
-BUGS_TO="jedahan@gmail.com"
-
 LICENCES="BSD"
 SLOT="0"
 PLATFORMS="~amd64"
+MYOPTIONS=""
 
 src_install() {
     dobin linksys-tftp

@@ -3,9 +3,13 @@
 # Based in part upon 'cd-discid-0.9.ebuild', which is
 #   Copyright 1999-2009 Gentoo Foundation
 
+BUGS_TO="jedahan@gmail.com"
+
 require toolchain-funcs
 
-SUMMARy="returns the disc id for the cd in the cd-rom drive"
+SUMMARY="Returns the disc id for the cd in the cd-rom drive"
+DESCRIPTION=""
+
 HOMEPAGE="http://lly.org/~rcw/${PN}/"
 DOWNLOADS="${HOMEPAGE}${PN}_${PV}.orig.tar.gz"
 
@@ -17,6 +21,4 @@ src_compile() {
     $(tc-getCC) ${CFLAGS} ${LDFLAGS} -o cd-discid cd-discid.c \
     || die "compile failed"
 }
-
-BUGS_TO="jedahan@gmail.com"
 

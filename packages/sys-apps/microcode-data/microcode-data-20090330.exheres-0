@@ -3,7 +3,11 @@
 # Based on 'microcode-data-20090330.ebuild', which is:
 #   Copyright 1999-2009 Gentoo Foundation
 
-DESCRIPTION="Intel IA32 microcode update data"
+BUGS_TO="jedahan@gmail.com"
+
+SUMMARY="Intel IA32 microcode update data"
+DESCRIPTION=""
+
 HOMEPAGE="http://downloadcenter.intel.com/default.aspx"
 DOWNLOADS="http://downloadmirror.intel.com/14303/eng/microcode-${PV}.tgz"
 
@@ -11,8 +15,6 @@ LICENCES="as-is"
 SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS=""
-
-BUGS_TO="jedahan@gmail.com"
 
 WORK=${WORKBASE}
 

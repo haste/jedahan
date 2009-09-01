@@ -3,17 +3,20 @@
 # Based in part upon 'wavegain-1.2.8.ebuild', which is:
 #   Copyright 1999-2009 Gentoo Foundation
 
+BUGS_TO="jedahan@gmail.com"
+
 require toolchain-funcs
 
 SUMMARY="ReplayGain for WAVE audio files"
+DESCRIPTION=""
+
 HOMEPAGE="http://www.rarewares.org/files/others"
 DOWNLOADS="${HOMEPAGE}/${PNV}srcs.zip"
 
 LICENCES="LGPL-2.1"
 SLOT="0"
 PLATFORMS="~amd64"
-
-BUGS_TO="jedahan@gmail.com"
+MYOPTIONS=""
 
 DEPENDENCIES="
     build:

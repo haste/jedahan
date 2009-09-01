@@ -3,7 +3,11 @@
 # Based in part upon 'normalize-0.7.7.ebuild', which is
 #   Copyright 1999-2007 Gentoo Foundation
 
+BUGS_TO="jedahan@gmail.com"
+
 SUMMARY="Audio file volume normalizer"
+DESCRIPTION=""
+
 HOMEPAGE="http://normalize.nongnu.org/"
 DOWNLOADS="http://nongnu.org/download/${PN}/${PNV}.tar.bz2"
 
@@ -19,8 +23,6 @@ DEPENDENCIES="
 	    media-libs/audiofile
         mp3? ( media-libs/libmad )
 "
-
-BUGS_TO="jedahan@gmail.com"
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( --disable-xmms )
 DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( 'mp3 mad' 'audiofile' )

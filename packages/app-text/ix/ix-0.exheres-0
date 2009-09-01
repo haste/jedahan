@@ -1,6 +1,8 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the GNU General Public Licence v2
 
+BUGS_TO="jedahan@gmail.com"
+
 SUMMARY="A pastebin. A nerdy pastebin."
 DESCRIPTION="
 GET:
@@ -19,19 +21,19 @@ POST:
     id:N      id to replace. login required
         where N is a unique number within request. (This allows you to post multiple files at once.)
 "
+
 HOMEPAGE="http://ix.io"
 DOWNLOADS="http://ix.io/client -> ix"
 
 LICENCES="as-is"
 SLOT="0"
 PLATFORMS="~amd64 ~x86"
+MYOPTIONS=""
 
 DEPENDENCIES="
     run:
         dev-lang/python
 "
-
-BUGS_TO="jedahan@gmail.com"
 
 WORK="${WORKBASE}"
 

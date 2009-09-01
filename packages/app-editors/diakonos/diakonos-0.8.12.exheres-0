@@ -1,6 +1,8 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
+BUGS_TO="jedahan@gmail.com"
+
 SUMMARY="A editor for the masses"
 DESCRIPTION="
 Frustrated by those other console editors? You already know what keys to press in your GUI applications to open, save, copy, cut, paste and undo. Why should your console text editor behave differently? Answer: it shouldn't.
@@ -9,11 +11,12 @@ Welcome to Diakonos, the console text editor with a key mapping you practically 
 "
 
 HOMEPAGE="http://purepistos.net/${PN}"
-DOWNLOADS="http://purepistos.net/${PN}/${PNV}.tar.bz2"
+DOWNLOADS="${HOMEPAGE}/${PNV}.tar.bz2"
 
 LICENCES="MIT"
 SLOT="0"
 PLATFORMS="~amd64"
+MYOPTIONS=""
 
 DEPENDENCIES="
     build+run:

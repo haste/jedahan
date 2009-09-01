@@ -3,7 +3,11 @@
 # Based on 'microcode-ctl-1.17-r2.ebuild', which is:
 #   Copyright 1999-2009 Gentoo Foundation
 
-DESCRIPTION="Intel processor microcode update utility"
+BUGS_TO="jedahan@gmail.com"
+
+SUMMARY="Intel processor microcode update utility"
+DESCRIPTION=""
+
 HOMEPAGE="http://www.urbanmyth.org/microcode"
 DOWNLOADS="http://www.urbanmyth.org/microcode/${PNV}.tar.gz"
 
@@ -11,8 +15,6 @@ LICENCES="GPL-2"
 SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS=""
-
-BUGS_TO="jedahan@gmail.com"
 
 DEPENDENCIES="
     run:
@@ -30,3 +32,4 @@ pkg_postinst() {
     einfo "Microcode updates will be lost at every reboot."
     einfo "You can use the init.d script to update at boot time."
 }
+

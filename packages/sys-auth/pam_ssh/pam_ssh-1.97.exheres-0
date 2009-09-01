@@ -3,6 +3,8 @@
 # Based in part upon 'pam_ssh-1.92.ebuild' from Gentoo, which is:
 #   Copyright 1999-2009 Gentoo Foundation
 
+BUGS_TO="jedahan@gmail.com"
+
 require pam
 
 SUMMARY="Uses ssh-agent for a single sign-on"
@@ -11,13 +13,12 @@ DESCRIPTION=""
 HOMEPAGE="http://pam-ssh.sourceforge.net"
 DOWNLOADS="mirror://sourceforge/pam-ssh/${PNV}.tar.bz2"
 
-BUGS_TO="jedahan@gmail.com"
-REMOTE_IDS="sourceforge:pam-ssh"
-
 LICENCES="BSD as-is"
 SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS=""
+
+REMOTE_IDS="sourceforge:pam-ssh"
 
 DEPENDENCIES="
     build+run:

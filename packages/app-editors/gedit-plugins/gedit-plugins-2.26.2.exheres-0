@@ -1,14 +1,17 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-DESCRIPTION="Offical plugins for gedit."
+BUGS_TO="jedahan@gmail.com"
+
+SUMMARY="Offical plugins for gedit."
+DESCRIPTION=""
+
 HOMEPAGE="http://live.gnome.org/GeditPlugins"
 DOWNLOADS="ftp://ftp.gnome.org/pub/gnome/sources/${PN}/2.26/${PNV}.tar.bz2"
 
 LICENCES="GPL-2"
 PLATFORMS="~amd64"
 SLOT="0"
-
 MYOPTIONS="python"
 
 DEPENDENCIES="
