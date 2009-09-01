@@ -27,9 +27,10 @@ DEPENDENCIES="
         ogg? ( media-sound/vorbis-tools )
     suggested,run:
         dev-ruby/gettext
-        media-sound/wavegain
-        media-sound/normalize
         media-sound/cd-discid
+        media-sound/normalize
+        media-sound/vorbisgain
+        media-sound/wavgain
 "
 # build: gtk? ( dev-ruby/gtk )
 
