@@ -1,0 +1,24 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License
+
+BUGS_TO="jedahan@gmail.com"
+
+require python [ python_dep=2.3.5 ]
+
+SUMMARY="Python bindings for libsexy"
+DESCRIPTION=""
+
+HOMEPAGE="http://www.chipx86.com/wiki/Libsexy"
+DOWNLOADS="http://releases.chipx86.com/libsexy/${PN}/${PNV}.tar.gz"
+
+LICENCES="LGPL-2.1"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        x11-libs/libsexy[>=${PV}]
+        gnome-bindings/pygtk[>=2.6.2]
+"
+
