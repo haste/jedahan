@@ -3,35 +3,9 @@
 # Based in part upon 'pam_ssh-1.92.ebuild' from Gentoo, which is:
 #   Copyright 1999-2009 Gentoo Foundation
 
-BUGS_TO="jedahan@gmail.com"
+require pam_ssh
 
-require pam
-
-SUMMARY="Uses ssh-agent for a single sign-on"
-DESCRIPTION=""
-
-HOMEPAGE="http://pam-ssh.sourceforge.net"
-DOWNLOADS="mirror://sourceforge/pam-ssh/${PNV}.tar.bz2"
-
-LICENCES="BSD as-is"
-SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS=""
 
-REMOTE_IDS="sourceforge:pam-ssh"
-
-DEPENDENCIES="
-    build+run:
-        sys-libs/pam
-"
-
-DEFAULT_SRC_CONFIGURE_PARAMS=( --with-pam-dir=$(getpam_mod_dir) )
 DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PNV}-double-free.patch" )
-
-src_install() {
-    default
-    dodoc "${FILES}"/system-auth.example
-    einfo "Check /usr/share/docs/${PNV}/system-auth.example to enable ssh_mod"
-    find "$IMAGE" -name '*.la' -delete || ewarn "Unable to remove libtool archives."
-}
 
