@@ -4,7 +4,22 @@
 BUGS_TO="jedahan@gmail.com"
 
 SUMMARY="fish is the Friendly Interactive SHell"
-DESCRIPTION=""
+DESCRIPTION="
+The friendly interactive shell (fish) is a Unix shell which focuses on interactive use, discoverability, and user friendliness. The design goal of fish is to give the user a rich set of powerful features in a way that is easy to discover, remember, and use.
+
+Fish's design is governed by 6 laws, these are:
+
+    * The law of orthogonality
+        The shell language should have a small set of orthogonal features.
+    * The law of minimalism
+        The shell should only contain features that cannot be implemented in a reasonable way outside of the shell.
+    * Configurability is the root of all evil
+        Every configuration option in a program is a place where the program is too stupid to figure out for itself what the user really wants, and should be considered a failiure of both the program and the programmer who implemented it.
+    * The law of user focus
+        When designing a program, one should first think about how to make a intuitive and powerful program.
+    * The law of discoverability
+        A program should be designed to make its features as easy as possible to discover for the user.
+"
 
 HOMEPAGE="http://fishshell.org"
 DOWNLOADS="${HOMEPAGE}/files/${PV}/${PNV}.tar.bz2"

@@ -6,7 +6,7 @@ BUGS_TO="jedahan@gmail.com"
 require python [ python_dep=2.3.5 ]
 
 SUMMARY="Python bindings for libsexy"
-DESCRIPTION=""
+DESCRIPTION="sexy-python is a set of Python bindings around libsexy."
 
 HOMEPAGE="http://www.chipx86.com/wiki/Libsexy"
 DOWNLOADS="http://releases.chipx86.com/libsexy/${PN}/${PNV}.tar.gz"

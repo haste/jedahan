@@ -8,7 +8,7 @@ BUGS_TO="jedahan@gmail.com"
 require pam
 
 SUMMARY="Uses ssh-agent for a single sign-on"
-DESCRIPTION=""
+DESCRIPTION="This PAM module provides single sign-on behavior for SSH. The user types an SSH passphrase when logging in (probably to GDM, KDM, or XDM) and is authenticated if the passphrase successfully decrypts the user's SSH private key. In the PAM session phase, an ssh-agent process is started and keys are added. For the entire session, the user can SSH to other hosts that accept key authentication without typing any passwords."
 
 HOMEPAGE="http://pam-ssh.sourceforge.net"
 DOWNLOADS="mirror://sourceforge/pam-ssh/${PNV}.tar.bz2"

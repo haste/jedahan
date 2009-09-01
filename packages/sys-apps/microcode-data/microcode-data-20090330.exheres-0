@@ -6,7 +6,7 @@
 BUGS_TO="jedahan@gmail.com"
 
 SUMMARY="Intel IA32 microcode update data"
-DESCRIPTION=""
+DESCRIPTION="The latest IA32 microcode data to update your CPUs instruction set."
 
 HOMEPAGE="http://downloadcenter.intel.com/default.aspx"
 DOWNLOADS="http://downloadmirror.intel.com/14303/eng/microcode-${PV}.tgz"

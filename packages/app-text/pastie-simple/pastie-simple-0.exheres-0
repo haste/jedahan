@@ -6,7 +6,7 @@
 BUGS_TO="jedahan@gmail.com"
 
 SUMMARY="simple command line interface to pastie"
-DESCRIPTION=""
+DESCRIPTION="pastie can paste text to pastie.org, a nice, focused pastebin"
 
 HOMEPAGE="http://pastie.org/paste/98642"
 DOWNLOADS="http://pastie.org/98642.txt -> pastie.in"
