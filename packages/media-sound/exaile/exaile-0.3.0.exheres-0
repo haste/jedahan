@@ -3,6 +3,8 @@
 # Based in part upon 'exaile-0.3.0.ebuild', which is
 #   Copyright 1999-2009 Gentoo Foundation
 
+BUGS_TO="jedahan@gmail.com"
+
 require freedesktop-mime python
 
 SUMMARY="A media player aiming to be similar to AmaroK, but for GTK+"
@@ -28,7 +30,7 @@ DEPENDENCIES="
     	media-plugins/gst-plugins-base:0.10
     	media-plugins/gst-plugins-good:0.10
     	libnotify? ( dev-python/notify-python )
-    	libsexy? ( dev-python/sexy-python )
+    	libsexy? ( gnome-bindings/sexy-python )
     	hal? ( sys-apps/hal )
     	cddb? ( dev-python/cddb-py )
     build:
@@ -36,8 +38,6 @@ DEPENDENCIES="
     	nls? (  dev-util/intltool
                 sys-devel/gettext )
 "
-
-BUGS_TO="jedahan@gmail.com"
 
 DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PNV}-Makefile.patch" "${FILES}/${PNV}-movelocale.patch")
 
