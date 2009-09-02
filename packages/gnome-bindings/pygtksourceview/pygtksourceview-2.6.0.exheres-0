@@ -1,0 +1,39 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License
+
+BUGS_TO="jedahan@gmail.com"
+
+require gnome-2 flag-o-matic multilib
+
+SUMMARY="GTK+2 bindings for Python"
+#DESCRIPTION=""
+
+HOMEPAGE="http://www.pygtk.org/"
+#DOWNLOADS=""
+
+LICENCES="LGPL-2.1"
+SLOT="2"
+PLATFORMS="~amd64"
+MYOPTIONS="doc"
+
+DEPENDENCIES="
+    build:
+	doc? (
+		dev-util/gtk-doc[>=1.10]
+		dev-libs/libxslt
+		app-text/docbook-xml-dtd[>=4.1.2]
+		app-text/docbook-xsl-stylesheets[>=1.70.1] )
+    build+run:
+        gnome-bindings/pygobject[>=2.15.2]
+    	gnome-bindings/pygtk[>=2.8]
+    	gnome-desktop/gtksourceview[>=2.3]
+"
+
+#pkg_setup() {
+#    G2CONF="${G2CONF} $(use_enable doc docs)"
+#}
+DEFAULT_SRC_CONFIGURE_PARAMS=( )
+DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( )
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( )
+
+
