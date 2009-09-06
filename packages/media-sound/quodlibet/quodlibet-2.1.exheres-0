@@ -30,7 +30,7 @@ DEPENDENCIES="
 	    dev-python/mutagen[>=1.15]
         dev-python/gst-python:0.10
         flac? (
-            media-plugins/gst-plugins-base:0.10[gstreamer_plugins:flac=] )
+            media-plugins/gst-plugins-good:0.10[gstreamer_plugins:flac] )
         alsa? (
             media-plugins/gst-plugins-bad[gstreamer_plugins:alsa] )
         mp3? ( 
