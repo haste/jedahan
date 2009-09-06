@@ -30,7 +30,7 @@ DEPENDENCIES="
         media-sound/cd-discid
         media-sound/normalize
         media-sound/vorbisgain
-        media-sound/wavgain
+        media-sound/wavegain
 "
 # build: gtk? ( dev-ruby/gtk )
 
