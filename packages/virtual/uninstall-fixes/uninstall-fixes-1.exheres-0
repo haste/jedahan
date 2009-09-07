@@ -16,9 +16,7 @@ DEPENDENCIES="
     group/audio
     group/haldaemon
     group/news
-    group/paludisbuild
     group/smmsp
-    group/sshd
     group/utmp
     group/uucp
     user/haldaemon

@@ -1,0 +1,25 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="Java-based Ruby interpreter implementation"
+DESCRIPTION="JRuby is a Java implementation of the Ruby programming language, being developed by the JRuby team. JRuby is tightly integrated with Java to allow the embedding of the interpreter into any Java application with full two-way access between the Java and the Ruby code (similar to Jython for the Python language)."
+
+HOMEPAGE="http://www.jruby.org/"
+DOWNLOADS="http://dist.codehaus.org/${PN}/${PV}/${PN}-src-${PV}.tar.gz"
+
+LICENCES="|| ( CPL-1.0 GPL-2 LGPL-2.1 )"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        dev-java/apache-ant[>=1.7]
+    run:
+        dev-lang/ruby[>=1.9]
+"
+
+src_install() {
+    cd ${WORK}
+    ant
+}
