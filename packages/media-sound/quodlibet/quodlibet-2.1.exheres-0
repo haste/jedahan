@@ -34,7 +34,7 @@ DEPENDENCIES="
         alsa? (
             media-plugins/gst-plugins-bad[gstreamer_plugins:alsa] )
         mp3? ( 
-            media-plugins/gst-plugins-ugly:0.10[gstreamer_plugins:mad] )
+            media-plugins/gst-plugins-ugly[gstreamer_plugins:mad] )
         vorbis? ( 
             media-plugins/gst-plugins-base:0.10[gstreamer_plugins:ogg]
             media-plugins/gst-plugins-base:0.10[gstreamer_plugins:vorbis] )
