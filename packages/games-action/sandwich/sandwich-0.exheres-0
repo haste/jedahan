@@ -1,29 +1,23 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-BUGS_TO="jedahan@gmail.com"
-
-SUMMARY="make me a sandwich"
-DESCRIPTION="makes a sandwich"
-
+SUMMARY="Makes a sandwich"
+DESCRIPTION="http://imgs.xkcd.com/comics/sandwich.png"
 HOMEPAGE="http://overbenny.wordpress.com/2009/07/25/sandwich-makefile/"
 DOWNLOADS=""
+
+BUGS_TO="jedahan@gmail.com"
 
 LICENCES="as-is"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS=""
-
-DEPENDENCIES="
-    run:
-        sys-devel/make
-"
 
 WORK="${WORKBASE}"
 
 src_install() {
-    # TODO: figure out a way to non-destructively be able to run
-    # 'make me a sandwich' in any directory 
+    insinto /usr/local/bin
+    dobin "${FILES}/make"
     cp "${FILES}"/Makefile "${WORK}/"
     dodoc Makefile
 }
+

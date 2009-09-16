@@ -1,20 +1,19 @@
 # Copyright 2009 Jonathan Dahan
 # Distributed under the terms of the GNU General Public License v2
 
-BUGS_TO="jedahan@gmail.com"
-
 SUMMARY="Online multiplayer 3D tank battle game"
-DESCRIPTION="In a game of BZFlag, players drive around tanks, viewed from a first-person view, in a server-defined world (aka 'map'), which can be modified. Tanks have the ability to drive through other tanks, but cannot travel through buildings or other world objects. The basic objective is to destroy opponents' tanks, which are tanks of another team's color. For example, green tanks are supposed to try to destroy red, purple, blue, and rogue tanks. Rogue tanks do not have any allegiances to a certain team and are therefore able to kill anybody."
-
+DESCRIPTION="
+In a game of BZFlag, players drive around tanks, viewed from a first-person view, in a server-defined world (aka 'map'), which can be modified. Tanks have the ability to drive through other tanks, but cannot travel through buildings or other world objects. The basic objective is to destroy opponents' tanks, which are tanks of another team's color. For example, green tanks are supposed to try to destroy red, purple, blue, and rogue tanks. Rogue tanks do not have any allegiances to a certain team and are therefore able to kill anybody.
+"
 HOMEPAGE="http://www.bzflag.org/"
 DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.bz2"
+
+BUGS_TO="jedahan@gmail.com"
+REMOTE_IDS="sourceforge:${PN}"
 
 LICENCES="LGPL-2.1"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS=""
-
-REMOTE_IDS="sourceforge:${PN}"
 
 DEPENDENCIES="
     build+run:
@@ -32,4 +31,6 @@ DEPENDENCIES="
     	x11-libs/libXi
     	x11-libs/libXmu
     	x11-libs/libXt
-    	x11-libs/libXxf86vm"
+    	x11-libs/libXxf86vm
+"
+

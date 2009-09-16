@@ -1,11 +1,9 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-BUGS_TO="jedahan@gmail.com"
-
 require eutils
 
-SUMMARY="fish is the Friendly Interactive SHell"
+SUMMARY="Friendly Interactive SHell"
 DESCRIPTION="
 The friendly interactive shell (fish) is a Unix shell which focuses on interactive use, discoverability, and user friendliness. The design goal of fish is to give the user a rich set of powerful features in a way that is easy to discover, remember, and use.
 
@@ -22,15 +20,21 @@ Fish's design is governed by 6 laws, these are:
     * The law of discoverability
         A program should be designed to make its features as easy as possible to discover for the user.
 "
-
 HOMEPAGE="http://fishshell.org"
 DOWNLOADS="${HOMEPAGE}/files/${PV}/${PNV}.tar.bz2"
 
+BUGS_TO="jedahan@gmail.com"
+
+UPSTREAM_CHANGELOG="${HOMEPAGE}changes.html"
+UPSTREAM_DOCUEMENTATION="${HOMEPAGE}/user_doc"
+
 LICENCES="GPL-2"
-SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS="X [[ description = [ enable xsel ] ]]
-           nls"
+SLOT="0"
+MYOPTIONS="
+    nls
+    X [[ description = [ enable xsel ] ]]
+"
 
 DEPENDENCIES="
     build:
@@ -40,11 +44,10 @@ DEPENDENCIES="
         sys-libs/ncurses
     	sys-apps/bc
     	X? ( x11-utils/xsel )
-    "
+"
 
 DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( 'X xsel' 'nls gettext' )
-DEFAULS_SRC_CONFIGURE_PARAMS=( 
-    --docdir=/usr/share/doc/${PNVR} )
+DEFAULS_SRC_CONFIGURE_PARAMS=( --docdir=/usr/share/doc/${PNVR} )
 
 src_install() {
     dodoc ChangeLog
@@ -55,3 +58,4 @@ src_install() {
     /usr/share/doc'
     rm "${IMAGE}"/usr/share/doc/${PNVR}/history.{c,h,o} || die 'Failed to clean up history'
 }
+

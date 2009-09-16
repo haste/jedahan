@@ -3,21 +3,20 @@
 # Based on 'microcode-ctl-1.17-r2.ebuild', which is:
 #   Copyright 1999-2009 Gentoo Foundation
 
-BUGS_TO="jedahan@gmail.com"
-
 SUMMARY="Intel processor microcode update utility"
-DESCRIPTION="The microcode_ctl utility has two uses:
+DESCRIPTION="
+The microcode_ctl utility has two uses:
     * it decodes and sends new microcode to the kernel driver to be uploaded to Intel IA32 processors. (Pentium Pro, PII, PIII, Pentium 4, Celeron, Xeon etc - all P6 and above, which does NOT include pentium classics). It also supports processors of the x86_64 architecture.
     * it signals the kernel driver to release any buffers it may hold 
 "
-
 HOMEPAGE="http://www.urbanmyth.org/microcode"
 DOWNLOADS="${HOMEPAGE}/${PNV}.tar.gz"
 
+BUGS_TO="jedahan@gmail.com"
+
 LICENCES="GPL-2"
-SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS=""
+SLOT="0"
 
 DEPENDENCIES="
     run:

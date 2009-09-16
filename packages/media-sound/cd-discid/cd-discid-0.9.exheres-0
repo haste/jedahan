@@ -3,20 +3,20 @@
 # Based in part upon 'cd-discid-0.9.ebuild', which is
 #   Copyright 1999-2009 Gentoo Foundation
 
-BUGS_TO="jedahan@gmail.com"
-
 require toolchain-funcs
 
 SUMMARY="Returns the disc id for the cd in the cd-rom drive"
-DESCRIPTION="cd-discid is a backend utility for getting CDDB discid information for a CD. It was originally designed for cdgrab (now abcde), but can be used for any purpose requiring CDDB data. It has been developed with attention to the CDDB specifications."
-
+DESCRIPTION="
+cd-discid is a backend utility for getting CDDB discid information for a CD. It was originally designed for cdgrab (now abcde), but can be used for any purpose requiring CDDB data. It has been developed with attention to the CDDB specifications.
+"
 HOMEPAGE="http://lly.org/~rcw/${PN}/"
 DOWNLOADS="${HOMEPAGE}${PN}_${PV}.orig.tar.gz"
 
-SLOT="0"
+BUGS_TO="jedahan@gmail.com"
+
 LICENCES="GPL-2"
 PLATFORMS="~amd64"
-MYOPTIONS=""
+SLOT="0"
 
 src_compile() {
     $(tc-getCC) ${CFLAGS} ${LDFLAGS} -o cd-discid cd-discid.c \

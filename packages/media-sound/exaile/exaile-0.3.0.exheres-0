@@ -3,21 +3,20 @@
 # Based in part upon 'exaile-0.3.0.ebuild', which is
 #   Copyright 1999-2009 Gentoo Foundation
 
-BUGS_TO="jedahan@gmail.com"
-
 require freedesktop-mime python
 
-SUMMARY="A media player aiming to be similar to AmaroK, but for GTK+"
+SUMMARY="GTK+ media player similar to AmaroK"
 DESCRIPTION="
 Exaile is a music manager and player for GTK+ written in Python. It incorporates automatic fetching of album art, lyrics fetching, artist/album information via Wikipedia, Last.fm scrobbling, support for many portable media players including iPods, internet radio such as shoutcast, and tabbed playlists.
 "
-
 HOMEPAGE="http://www.exaile.org"
 DOWNLOADS="http://www.launchpad.net/${PN}/${PV}/${PV}/+download/${PNV}.tar.gz"
 
+BUGS_TO="jedahan@gmail.com"
+
 LICENCES="GPL-2 GPL-3"
-SLOT="0"
 PLATFORMS="~amd64"
+SLOT="0"
 MYOPTIONS="cddb doc hal nls libnotify libsexy"
 
 DEPENDENCIES="

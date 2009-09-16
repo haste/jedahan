@@ -1,20 +1,21 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-BUGS_TO="jedahan@gmail.com"
-
-SUMMARY="Hierarchical notebook helps structure many kinds of data in one place"
-DESCRIPTION="hierarchical notebook(hnb) is a curses program to structure many kinds of data in one place, for example addresses, to-do lists, ideas, book reviews or to store snippets of brainstorming. Writing structured documents and speech outlines."
-
-HOMEPAGE="http://${PN}.sourceforge.net/"
+SUMMARY="Helps structure many kinds of data in one place"
+DESCRIPTION="
+hierarchical notebook(hnb) is a curses program to structure many kinds of data in one place, for example addresses, to-do lists, ideas, book reviews or to store snippets of brainstorming. Writing structured documents and speech outlines.
+"
+HOMEPAGE="http://${PN}.sourceforge.net"
 DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.gz"
 
-LICENCES="GPL-3"
-SLOT="0"
-PLATFORMS="~amd64"
-MYOPTIONS=""
-
+BUGS_TO="jedahan@gmail.com"
 REMOTE_IDS="sourceforge:${PN}"
+
+UPSTREAM_DOCUMENTATION="${HOMEPAGE}/Documentation"
+
+LICENCES="GPL-3"
+PLATFORMS="~amd64"
+SLOT="0"
 
 src_install(){
     dodoc README doc/hnbrc

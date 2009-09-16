@@ -1,23 +1,26 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-BUGS_TO="jedahan@gmail.com"
-
 SCM_REPOSITORY="http://hg.scrapping.cc/subtle/"
 SCM_BRANCH="trunk"
 
 require scm-hg
 
-SUMMARY="semi-automatic tiling window manager scriptable with ruby"
-DESCRIPTION="subtle is a semi-automatic tiling window manager with a strong focus on easy but customizable handling and look and feel. Semi-automatic tiling means that there is no layout enforcement or general rule: Clients can freely be arranged in different positions of a variable grid."
+SUMMARY="Semi-automatic tiling window manager scriptable with ruby"
+DESCRIPTION="
+subtle is a semi-automatic tiling window manager with a strong focus on easy but customizable
+handling and look and feel. Semi-automatic tiling means that there is no layout enforcement or
+general rule: Clients can freely be arranged in different positions of a variable grid.
+"
 
 HOMEPAGE="http://unexist.scrapping.cc/projects/subtle/"
 DOWNLOADS=""
 
+BUGS_TO="jedahan@gmail.com"
+
 LICENCES="GPL-2"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS=""
 
 DEPENDENCIES="
     build+run:
@@ -39,3 +42,4 @@ src_install() {
     rake install
     emagicdocs
 }
+

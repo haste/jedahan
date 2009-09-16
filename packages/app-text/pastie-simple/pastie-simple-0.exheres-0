@@ -3,24 +3,23 @@
 # Based on 'pastie-0.exheres-0' which is:
 #   Copyright 2009 Gaute Hope <eg@gaute.vetsj.com>
 
-BUGS_TO="jedahan@gmail.com"
-
-SUMMARY="simple command line interface to pastie"
+SUMMARY="Simple CLI for pastie.org"
 DESCRIPTION="pastie can paste text to pastie.org, a nice, focused pastebin"
-
 HOMEPAGE="http://pastie.org/paste/98642"
 DOWNLOADS="http://pastie.org/98642.txt -> pastie.in"
 
-LICENCES="AS-IS"
-SLOT="0"
+BUGS_TO="jedahan@gmail.com"
+
+LICENCES="as-is"
 PLATFORMS="~amd64"
-MYOPTIONS=""
+SLOT="0"
 
 DEPENDENCIES="
     build+run:
         !app-text/pastie
     run:
-        dev-lang/ruby"
+        dev-lang/ruby
+"
 
 WORK=${WORKBASE}
 

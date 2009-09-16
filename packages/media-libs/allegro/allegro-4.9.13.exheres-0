@@ -1,19 +1,21 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-BUGS_TO="jedahan@gmail.com"
-
 require cmake multilib
 
-SUMMARY="A game programming library"
-DESCRIPTION="Allegro is a game programming library for C/C++ developers distributed freely, supporting the following platforms: DOS, Unix (Linux, FreeBSD, Irix, Solaris, Darwin), Windows, QNX, BeOS and MacOS X. It provides many functions for graphics, sounds, player input (keyboard, mouse and joystick) and timers. It also provides fixed and floating point mathematical functions, 3d functions, file management functions, compressed datafile and a GUI."
-
+SUMMARY="C/C++ game programming library"
+DESCRIPTION="
+Allegro is a game programming library for C/C++ developers distributed freely, supporting the following platforms: DOS, Unix (Linux, FreeBSD, Irix, Solaris, Darwin), Windows, QNX, BeOS and MacOS X. It provides many functions for graphics, sounds, player input (keyboard, mouse and joystick) and timers. It also provides fixed and floating point mathematical functions, 3d functions, file management functions, compressed datafile and a GUI.
+"
 HOMEPAGE="http://alleg.sourceforge.net/"
 DOWNLOADS="mirror://sourceforge/alleg/${PNV}.tar.gz"
 
+BUGS_TO="jedahan@gmail.com"
+REMOTE_IDS="freshmeat:alleg"
+
 LICENCES="as-is"
-SLOT="0"
 PLATFORMS="~amd64"
+SLOT="0"
 MYOPTIONS="
     alsa
     d3d [[ description = [ Direct3d support (for windows development) ] ]]
@@ -29,9 +31,7 @@ MYOPTIONS="
     ttf 
     vorbis
     x11
-    "
-
-REMOTE_IDS="freshmeat:alleg"
+"
 
 DEPENDENCIES="
     build+run:
@@ -52,3 +52,4 @@ src_install() {
     cmake_src_install
     dosym lib${PNV}.so /usr/$(get_libdir)/lib${PN}.so
 }
+

@@ -1,8 +1,6 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-BUGS_TO="jedahan@gmail.com"
-
 SUMMARY="Offical plugins for gedit."
 DESCRIPTION="
 Here follows a list of plugins currently available in gedit-plugins:
@@ -26,14 +24,15 @@ Here follows a list of plugins currently available in gedit-plugins:
     * Terminal
         A simple terminal widget accessible from the bottom panel 
 "
-
 HOMEPAGE="http://live.gnome.org/GeditPlugins"
 DOWNLOADS="ftp://ftp.gnome.org/pub/gnome/sources/${PN}/2.26/${PNV}.tar.bz2"
 
+BUGS_TO="jedahan@gmail.com"
+
+MYOPTIONS="python"
 LICENCES="GPL-2"
 PLATFORMS="~amd64"
 SLOT="0"
-MYOPTIONS="python"
 
 DEPENDENCIES="
     build+run:

@@ -3,18 +3,16 @@
 # Based on 'microcode-data-20090330.ebuild', which is:
 #   Copyright 1999-2009 Gentoo Foundation
 
-BUGS_TO="jedahan@gmail.com"
-
 SUMMARY="Intel IA32 microcode update data"
 DESCRIPTION="The latest IA32 microcode data to update your CPUs instruction set."
-
 HOMEPAGE="http://downloadcenter.intel.com/default.aspx"
 DOWNLOADS="http://downloadmirror.intel.com/14303/eng/microcode-${PV}.tgz"
 
+BUGS_TO="jedahan@gmail.com"
+
 LICENCES="as-is"
-SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS=""
+SLOT="0"
 
 WORK=${WORKBASE}
 

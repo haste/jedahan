@@ -1,9 +1,7 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the GNU General Public Licence v2
 
-BUGS_TO="jedahan@gmail.com"
-
-SUMMARY="A pastebin. A nerdy pastebin."
+SUMMARY="Nerdy pastebin"
 DESCRIPTION="
 GET:
     http://ix.io/{ID,ID/LANG,user/USER}
@@ -23,12 +21,13 @@ POST:
 "
 
 HOMEPAGE="http://ix.io"
-DOWNLOADS="http://ix.io/client -> ix"
+DOWNLOADS="${HOMEPAGE}/client -> ix"
+
+BUGS_TO="jedahan@gmail.com"
 
 LICENCES="as-is"
-SLOT="0"
 PLATFORMS="~amd64 ~x86"
-MYOPTIONS=""
+SLOT="0"
 
 DEPENDENCIES="
     run:
@@ -43,3 +42,4 @@ src_install() {
     dobin ix
     emagicdocs
 }
+
