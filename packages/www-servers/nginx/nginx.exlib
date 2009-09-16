@@ -1,4 +1,4 @@
-SUMMARY="A small and fast HTTP server and mail proxy server"
+SUMMARY="Small and fast HTTP server and mail proxy server"
 DESCRIPTION="A free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server.
 It's known for its high performance, stability, rich feature set, simple configuration, and low resource consumption.
 Nginx is one of a handful of servers written to address the C10K problem. Unlike traditional servers, Nginx doesn't rely on threads to handle requests. Instead it uses a much more scalable event-driven (asynchronous) architecture. This architecture uses small, but most importantly, predictable amounts of memory under load.
@@ -14,3 +14,74 @@ REMOTE_IDS="freshmeat:${PN}"
 UPSTREAM_CHANGELOG="http://nginx.net/CHANGES"
 UPSTREAM_DOCUMENTATION="http://wiki.${PN}.org/"
 
+MYOPTIONS="addition debug fastcgi flv imap pcre perl random-index status sub webdav zlib"
+
+DEPENDENCIES="
+    build+run:
+        user/${PN}
+        group/${PN}
+        pcre? ( dev-libs/pcre )
+        dev-libs/openssl [[
+            description = [ newer nginx versions are very broken without it ]
+        ]]
+        zlib? ( sys-libs/zlib )
+        perl? ( dev-lang/perl )"
+
+option_with_no_inverse() {
+    option "${1}" && option_with ${1#!} ${2}
+}
+
+option_with_http_modules() {
+    for s in "${@}"; do
+        local opt=${s% *}
+        local tmp=${s#* }
+        local tmp=${tmp#!}
+        option_with_no_inverse ${opt} http_${tmp/-/_}_module
+    done
+}
+
+src_prepare() {
+    sed -i 's/ make/ \\$(MAKE)/' auto/lib/perl/make
+}
+
+src_configure() {
+    ./configure \
+        --prefix=/usr \
+        --conf-path=/etc/${PN}/${PN}.conf \
+        --http-log-path=/var/log/${PN}/access_log \
+        --error-log-path=/var/log/${PN}/error_log \
+        --pid-path=/var/run/${PN}.pid \
+        --http-client-body-temp-path=/var/tmp/${PN}/client \
+        --http-proxy-temp-path=/var/tmp/${PN}/proxy \
+        --http-fastcgi-temp-path=/var/tmp/${PN}/fastcgi \
+        --with-md5-asm --with-sha1-asm \
+        --with-ld-opt="${LDFLAGS}" \
+        $(option_with_http_modules addition !fastcgi flv "!zlib gzip" pcre perl \
+            "status stub-status" "webdav dav" sub random-index) \
+        $(option_with_no_inverse debug) \
+        $(option_with_no_inverse imap) \
+        || die "configure failed"
+}
+
+src_compile() {
+    emake CC="$(tc-getCC)" LD="\${CC}" OTHERLDFLAGS="${LDFLAGS}"
+}
+
+src_install() {
+    keepdir /var/log/${PN} /var/tmp/${PN}/{client,proxy,fastcgi}
+
+    dosbin objs/nginx
+    newinitd "${FILES}"/nginx.initd nginx
+
+    insinto /etc/nginx
+    doins "${FILES}"/nginx.conf
+    doins conf/*
+    dodoc CHANGES{,.ru} README
+
+    option perl && emake -C objs/src/http/modules/perl install DESTDIR="${IMAGE}"
+}
+
+pkg_postinst() {
+    # FIXME porting install_cert
+    ewarn "You should generate your certificates and put it in /etc/ssl/${PN}/"
+}

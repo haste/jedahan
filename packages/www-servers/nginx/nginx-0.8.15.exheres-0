@@ -1,0 +1,10 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+# Based in part upon 'nginx-0.7.51.exheres-0', which is:
+#   Copyright 2009 Timothy Redaelli
+
+require nginx toolchain-funcs
+
+SLOT="0"
+PLATFORMS="~amd64"
+
