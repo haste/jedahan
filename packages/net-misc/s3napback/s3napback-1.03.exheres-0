@@ -1,0 +1,35 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="Cycling, Incremental, Compressed, Encrypted Backups to Amazon S3"
+DESCRIPTION="
+    * Dead-simple configuration
+    * Automatic rotation of backup sets
+    * Alternation of full and incremental backups (using 'tar -g')
+    * Integrated GPG encryption
+    * No temporary files used anywhere, only pipes and TCP streams (optionally, uses smallish temp files to save memory)
+    * Integrated handling of MySQL dumps
+    * Integrated handling of Subversion repositories, and of directories containing multiple Subversion repositories (including incremental backups-- thanks to Kevin Ross for that). 
+"
+HOMEPAGE="http://dev.davidsoergel.com/trac/${PN}"
+DOWNLOADS="${HOMEPAGE}/raw-attachment/wiki/Releases/${PNV}.tgz"
+
+LICENCES="as-is"
+SLOT="0"
+PLATFORMS="~amd64"
+DEPENDENCIES="
+    post,suggested:
+        app-crypt/gnupg
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+WORK="${WORKBASE}/${PN}"
+
+src_install() {
+    dodir /usr/local/{bin,${PN}}
+    insinto /usr/local/${PN}
+    doins *
+    dosym /usr/local/${PN}/s3napback.pl /usr/bin/s3napback
+}
+
