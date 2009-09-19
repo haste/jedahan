@@ -1,0 +1,77 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+# Based on chromium-bin-9999.ebuild', which is:
+#   Copyright 1999-2009 Gentoo Foundation
+
+DESCRIPTION="Chromium is the open-source project behind Google Chrome"
+SUMMARY="${DESCRIPTION}"
+HOMEPAGE="http://code.google.com/chromium/"
+BUILDBOT="http://build.chromium.org/buildbot/snapshots/chromium-rel-linux"
+
+LICENCES="BSD"
+SLOT="0"
+MYOPTIONS="platform:x86 platform:amd64"
+BUGS_TO="jedahan@gmail.com"
+
+DEPENDENCIES="
+    build:
+        app-arch/unzip
+    run:
+        gnome-platform/GConf
+        media-fonts/corefonts
+        sys-sound/alsa-lib[>=1.0.19]
+        sys-devel/gcc[>=4.2]
+        dev-libs/nspr[>=4.7]
+        dev-libs/nss[>=3.12]
+        x11-libs/pango
+"
+
+WORK=${WORKBASE}
+
+QA_EXECSTACK="opt/chromium/chrome"
+
+# Ogg/Theora/Vorbis-only FFmpeg binaries
+QA_TEXTRELS="
+    opt/chromium/libavcodec.so.52
+    opt/chromium/libavformat.so.52
+    opt/chromium/libavutil.so.50"
+QA_PRESTRIPPED="${QA_TEXTRELS}"
+
+pkg_setup() {
+    if ! grep -q sse2 /proc/cpuinfo; then
+        die "This binary requires SSE2 support, it will not work on older processors"
+    fi
+}
+
+src_prepare() {
+    sed -i -e 's/$HERE:$LD_LIBRARY_PATH/$HERE:$HERE\/lib:$LD_LIBRARY_PATH/g' "${WORK}/chrome-linux/chrome-wrapper"
+}
+
+src_install() {
+    # install chromium
+    declare CHROMIUM_HOME=/opt/chromium
+    dodir ${CHROMIUM_HOME}
+    insinto ${CHROMIUM_HOME}
+    doins -r ${WORK}/chrome-linux/*
+
+    # /usr/bin/chromium symlink
+    dodir /usr/bin/
+    dosym ${CHROMIUM_HOME}/chrome-wrapper /usr/bin/chromium
+
+    # plugins symlink
+    [[ -d /opt/netscape/plugins ]] && dosym /opt/netscape/plugins ${CHROMIUM_HOME}/plugins
+
+    # library symlinks
+    dodir ${CHROMIUM_HOME}/lib
+    NSS_DIR=../../../usr/$(get_libdir)/nss
+    NSPR_DIR=../../../usr/$(get_libdir)
+
+    dosym ${NSPR_DIR}/libnspr4.so ${CHROMIUM_HOME}/lib/libnspr4.so.0d
+    dosym ${NSPR_DIR}/libplc4.so ${CHROMIUM_HOME}/lib/libplc4.so.0d
+    dosym ${NSPR_DIR}/libplds4.so ${CHROMIUM_HOME}/lib/libplds4.so.0d
+    dosym ${NSS_DIR}/libnss3.so ${CHROMIUM_HOME}/lib/libnss3.so.1d
+    dosym ${NSS_DIR}/libnssutil3.so ${CHROMIUM_HOME}/lib/libnssutil3.so.1d
+    dosym ${NSS_DIR}/libsmime3.so ${CHROMIUM_HOME}/lib/libsmime3.so.1d
+    dosym ${NSS_DIR}/libssl3.so ${CHROMIUM_HOME}/lib/libssl3.so.1d
+}
+

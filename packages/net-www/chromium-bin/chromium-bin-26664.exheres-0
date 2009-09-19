@@ -1,0 +1,12 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+# Based on chromium-bin-9999.ebuild', which is:
+#   Copyright 1999-2009 Gentoo Foundation
+
+require eutils multilib chromium-bin
+
+DOWNLOADS="platform:x86? ( ${BUILDBOT}/${PV}/chrome-linux.zip -> ${PNV}.zip )
+           platform:amd64? ( ${BUILDBOT}-64/${PV}/chrome-linux.zip -> ${PNV}.zip )"
+
+PLATFORMS="~amd64"
+
