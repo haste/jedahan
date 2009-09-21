@@ -10,7 +10,10 @@ BUILDBOT="http://build.chromium.org/buildbot/snapshots/chromium-rel-linux"
 
 LICENCES="BSD"
 SLOT="0"
-MYOPTIONS="platform:x86 platform:amd64"
+MYOPTIONS=" platform:x86 [[ requires [ x86_cpu_features: sse2 ] ]]
+            platform:amd64 [[ requires [ amd64_cpu_features: sse2 ] ]]
+            x86_cpu_features: sse2
+            amd64_cpu_features: sse2"
 BUGS_TO="jedahan@gmail.com"
 
 DEPENDENCIES="
@@ -36,12 +39,6 @@ QA_TEXTRELS="
     opt/chromium/libavformat.so.52
     opt/chromium/libavutil.so.50"
 QA_PRESTRIPPED="${QA_TEXTRELS}"
-
-pkg_setup() {
-    if ! grep -q sse2 /proc/cpuinfo; then
-        die "This binary requires SSE2 support, it will not work on older processors"
-    fi
-}
 
 src_prepare() {
     sed -i -e 's/$HERE:$LD_LIBRARY_PATH/$HERE:$HERE\/lib:$LD_LIBRARY_PATH/g' "${WORK}/chrome-linux/chrome-wrapper"
